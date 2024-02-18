@@ -1,6 +1,7 @@
 /*
  * Author @ Sepehr Akbari (Compiler)
  * Feb 28, 2024
+ * Title: "Let's go on a - Validated - Date!"
  * Desc: 
     * Write a program called ValidatedDate that asks the user 
     * to input a month (number), a date and a year. The month should 
@@ -9,15 +10,17 @@
     * should not accept any invalid date. Finally, print the date entered. 
     * (Notes: Remember that September, April, June and November have 30 days 
     * each, and the rest (other than February) have 31. February has 28 days 
-    * in non-leap years and 29 days in leap years. [30 points])
- */
+    * in non-leap years and 29 days in leap years. 
+ * 
+ * Points: [30 points]
+*/
 
 package ValidatedDate;
 import java.util.*;
 
 public class ValidatedDate {
-   // public static Scanner sc = new Scanner(System.in);
    static Scanner sc = new Scanner(System.in);
+   
     public static void main(String[] args){
         int monthIn, dateIn, yearIn;
         int response;
