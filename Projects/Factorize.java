@@ -1,6 +1,7 @@
 /*
  * Author @ Sepehr Akbari (Compiler)
  * Feb 28, 2024
+ * Title: "What factors are you/we made of?"
  * Desc: 
     * Write a program called Factorize that takes 
     * an integer n from the user and prints out the prime 
