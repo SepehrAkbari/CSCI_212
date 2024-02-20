@@ -21,11 +21,14 @@ public class Factorize {
 
    // Main function
    public static void main(String[] args) {
+      // Printing the title of the program
+      System.out.println("\n What factors are you/we made of? \n");
+
       // Getting a valid input from the user (a positive integer & not 0)
       boolean valid = false;
       while (!valid) {
          try {
-            System.out.print("Enter a number: ");
+            System.out.print("Enter a number to factorize: ");
             // Getting the input from the user
             int n = sc.nextInt();
             if (n > 0) {
