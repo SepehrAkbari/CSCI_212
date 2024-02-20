@@ -29,6 +29,9 @@ public class ValidatedDate {
         // Variable to store the user's response to the date format
         int response;
 
+        // Printing the title of the program
+        System.out.println("\n 3Let's go on a - Validated - Date! \n");
+
         // calling the functions to get the input from the user
         yearIn = GetYear();
         monthIn = GetMonth();
