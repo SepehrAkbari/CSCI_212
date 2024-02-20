@@ -32,7 +32,7 @@ public class ValidatedDate {
         // Printing the title of the program
         System.out.println("\n 3Let's go on a - Validated - Date! \n");
 
-        // calling the functions to get the input from the user
+        // Calling the functions to get the input from the user
         yearIn = GetYear();
         monthIn = GetMonth();
         dateIn = GetDate(yearIn, monthIn);
