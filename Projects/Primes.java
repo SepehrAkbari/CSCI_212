@@ -22,13 +22,17 @@ public class Primes {
     // Scanner object to get the input from the user
     static Scanner sc = new Scanner(System.in);
 
+    // Main function
     public static void main(String[] args){
+        // The amount of prime numbers to be printed
         int n;
-        boolean valid = false;
+
         // Getting a valid input from the user (a positive integer & not 0)
+        boolean valid = false;
         while (!valid) {
             try {
                 System.out.print("Enter an integer: ");
+                // Getting the input from the user
                 n = sc.nextInt();
                 if (n > 0) {
                     // Breaking the loop
@@ -38,17 +42,21 @@ public class Primes {
                 } else {
                     System.out.println("Invalid input. Please enter a positive integer.");
                 }
-                // Catching the exception if the input is not an integer
+            // Catching the exception if the input is not an integer
             } catch (InputMismatchException e) {
                 System.out.println("Invalid input. Please enter a valid integer.");
+                // Clearing the buffer
                 sc.next();
             }
         }
+        // Printing a new line for better readability
         System.out.print("\n");
     }
 
+    // Function to print the first n prime numbers
     public static void PrintPrimes(int n) {
         System.out.print("The first " + n + " prime numbers are: ");
+
         // Printing the first n prime numbers
         for (int i = 2; n > 0; i++) {
             if (isPrime(i)) {
@@ -58,27 +66,34 @@ public class Primes {
         }
     }
 
+    // Function to check if a number is prime or not
     public static boolean isPrime(int n) {
         // Checking if the number is prime or not
-        // Steps 2 and 3 are for optimization purposes
+        // Steps (2) and (3) are only for optimization purposes
 
         // 1) If the number is less than or equal to 1, it's not prime
-        if (n <= 1) 
+        if (n <= 1) {
             return false; 
+        }
 
         // 2) If the number is 2 or 3, it's prime
-        if (n == 2 || n == 3) 
+        if (n == 2 || n == 3) {
             return true; 
-        
+        }
+
         // 3) If the number is divisible by 2 or 3, it's not prime
-        if (n % 2 == 0 || n % 3 == 0) 
+        if (n % 2 == 0 || n % 3 == 0) {
             return false; 
+        }
 
         // 4) A composite number has a prime divisor less than or equal to sqrt(n)
-        for (int i = 5; i < Math.sqrt(n); i = i + 6) 
-            if (n % i == 0 || n % (i + 2) == 0) 
-                return false; 
-  
+        for (int i = 5; i < Math.sqrt(n); i = i + 6) {
+            // If the number is divisible by i or i + 2, it's not prime
+            if (n % i == 0 || n % (i + 2) == 0) {
+                return false;
+            } 
+        }
+        // If the number is not divisible by any of the above numbers, it's prime
         return true; 
     }
 }
