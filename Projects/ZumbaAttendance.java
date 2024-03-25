@@ -17,38 +17,57 @@
  * Points: [20 points]
 */
 
+// Packages & Imports
 package Zumba;
 import java.util.Scanner;
 
 public class ZumbaAttendance {
     public static void main(String[] args) {
+        // Scanner object to get the input from the user
         Scanner sc = new Scanner(System.in);
 
+        // Printing the title of the program
+        System.out.println("\n one, two, three, ZUMBA! \n");
+
+        // Size of the time period (in this case, 12 months)
         final int SIZE = 12;
+        // Array to store the Zumba attendance for each month
         int[] yearlyValues = new int[SIZE];
 
+        // Giving the user instructions
         System.out.println("Enter 12 integers");
+        System.out.print("\n");
 
+        // Getting a valid input from the user (12 integers)
         boolean valid = false;
         while (!valid) {
             try {
                 for (int i = 0; i < SIZE; i++) {
                     System.out.print("How many sessions did you attend in month " + (i + 1) + ": ");
+                    // Getting the input from the user
                     yearlyValues[i] = sc.nextInt();
                 }
+                // Breaking the loop
                 valid = true;
+            // Catching the exception
             } catch (Exception e) {
                 System.out.println("Invalid input. Please enter an integer.");
+                // Clearing the buffer
                 sc.next();
             }
         }
 
+        // Outputting the Zumba attendance for each quarter
         System.out.println("\nZumba attendance for each quarter:");
         for (int i = 0; i < SIZE; i++) {
             System.out.print(yearlyValues[i] + " ");
-            if ((i + 1) % 3 == 0) {
+            // Outputting a new line after each quarter
+            if ((i + 1) % 4 == 0) {
                 System.out.println();
             }
         }
+
+        // Closing the scanner
+        sc.close();
     }
 }
