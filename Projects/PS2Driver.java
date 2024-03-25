@@ -26,28 +26,11 @@
  *
  * All three methods are included in the PS2Driver.java file and called in the main() method.
  */
-public class PS2Driver {
-	public static int[] totals(int[][] array) {
-		//include the code to solve the respective problem here
-		//change anything you need to - sums below is not declared not instantiated
-		//thus the error
-		int[] sums = new int [array[0].length];
 
-		return sums;
-			
-	}
-	
-	public static int vowels(String[] alpha) {
-		//include the code to solve the respective problem here
-		//change anything you need to
-		int num = 0;
-		return num;
-	}
-	
-	public static void border(char[][] array) {
-		//include the code to solve the respective problem here
-		}
-	
+// Packages & Imports
+import java.util.Scanner;
+
+public class PS2Driver {
 	public static void main(String[] args) {
 		// this is used for testing each problem
 		//one test case is included below - you need to perform thorough testing
@@ -78,4 +61,56 @@ public class PS2Driver {
 		System.out.println();
 	}
 
+	public static int[] totals(int[][] array) {
+		//include the code to solve the respective problem here
+		//change anything you need to - sums below is not declared not instantiated
+		//thus the error
+		int[] sums = new int[array[0].length];
+		for (int i = 0; i < array[0].length; i++) {
+			for (int j = 0; j < array.length; j++) {
+				sums[i] += array[j][i];
+			}
+		}
+		return sums;
+	}
+	
+	public static int vowels(String[] alpha) {
+		//include the code to solve the respective problem here
+		//change anything you need to
+		int max = 0;
+		int maxIndex = 0;
+		for (int i = 0; i < alpha.length; i++) {
+			int count = 0;
+			for (int j = 0; j < alpha[i].length(); j++) {
+				if (alpha[i].charAt(j) == 'a' || alpha[i].charAt(j) == 'e' || alpha[i].charAt(j) == 'i' || alpha[i].charAt(j) == 'o' || alpha[i].charAt(j) == 'u') {
+					count++;
+				}
+			}
+			if (count > max) {
+				max = count;
+				maxIndex = i;
+			}
+		}
+		return maxIndex;
+	}
+	
+	public static void border(char[][] array) {
+		//include the code to solve the respective problem here
+		for (int i = 0; i < array.length; i++) {
+			for (int j = 0; j < array[0].length; j++) {
+				if (i == 0 || i == array.length - 1 || j == 0 || j == array[0].length - 1) {
+					array[i][j] = 'o';
+				} else {
+					array[i][j] = 'x';
+				}
+			}
+		}
+
+		for (int i = 0; i < array.length; i++) {
+			for (int j = 0; j < array[0].length; j++) {
+				System.out.print(array[i][j] + " ");
+			}
+			System.out.println();
+		}
+	}
 }
