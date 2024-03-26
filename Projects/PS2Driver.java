@@ -65,39 +65,56 @@ public class PS2Driver {
 		//include the code to solve the respective problem here
 		//change anything you need to - sums below is not declared not instantiated
 		//thus the error
+
+		// initialize the sums array
 		int[] sums = new int[array[0].length];
+		// iterate through the columns
 		for (int i = 0; i < array[0].length; i++) {
+			// iterate through the rows
 			for (int j = 0; j < array.length; j++) {
+				// add the value of the current element to the sum of the column
 				sums[i] += array[j][i];
 			}
 		}
+		// return the sums array
 		return sums;
 	}
 	
 	public static int vowels(String[] alpha) {
 		//include the code to solve the respective problem here
 		//change anything you need to
+
+		// initialize the max number of vowels and the index of the string with the most vowels
 		int max = 0;
 		int maxIndex = 0;
+
+		// iterate through the strings in the array
 		for (int i = 0; i < alpha.length; i++) {
 			int count = 0;
+			// iterate through the characters in the string
 			for (int j = 0; j < alpha[i].length(); j++) {
+				// if the character is a vowel, increment the count
 				if (alpha[i].charAt(j) == 'a' || alpha[i].charAt(j) == 'e' || alpha[i].charAt(j) == 'i' || alpha[i].charAt(j) == 'o' || alpha[i].charAt(j) == 'u') {
 					count++;
 				}
 			}
+			// if the current string has more vowels than the previous max, update the max and the index
 			if (count > max) {
 				max = count;
 				maxIndex = i;
 			}
 		}
+		// return the index of the string with the most vowels
 		return maxIndex;
 	}
 	
 	public static void border(char[][] array) {
 		//include the code to solve the respective problem here
+		
+		// iterate through the elements of the array
 		for (int i = 0; i < array.length; i++) {
 			for (int j = 0; j < array[0].length; j++) {
+				// if the element is on the perimeter, set it to 'o', otherwise set it to 'x'
 				if (i == 0 || i == array.length - 1 || j == 0 || j == array[0].length - 1) {
 					array[i][j] = 'o';
 				} else {
@@ -106,10 +123,12 @@ public class PS2Driver {
 			}
 		}
 
+		// print the array
 		for (int i = 0; i < array.length; i++) {
 			for (int j = 0; j < array[0].length; j++) {
 				System.out.print(array[i][j] + " ");
 			}
+			// print a new line after each row
 			System.out.println();
 		}
 	}
