@@ -38,11 +38,15 @@ public class PS2Driver {
 		//test totals
 		System.out.println("Test for the totals method");
 		//
-		int[][] square2 = {{8,1,6, 4},{3,5,7, 6},{4,9,2, 20}};
+		int[][] square2 = {
+			{8,1,6,4},
+			{3,5,7,6},
+			{4,9,2,20}
+		};
 		for (int total: totals(square2)) {
 			System.out.print (total + " ");
 		}
-		System.out.println();
+		System.out.println("\n");
 		
 		//test vowels
 		System.out.println("Test for the vowels method");
@@ -50,7 +54,7 @@ public class PS2Driver {
 		String[] beta = {"test1", "let's try again", "how many vowels?", "12345"};
 		System.out.print(vowels(beta));
 		
-		System.out.println();
+		System.out.println("\n");
 		
 		//test border method
 		System.out.println("Test for the border method");
@@ -58,7 +62,7 @@ public class PS2Driver {
 		char[][] test = {{'a','b', 'c', '4'}, {'5','1','2', '3'}, {'a','b','6', 'c'}};
 		border(test);
 		
-		System.out.println();
+		System.out.println("\n");
 	}
 
 	public static int[] totals(int[][] array) {
@@ -66,17 +70,22 @@ public class PS2Driver {
 		//change anything you need to - sums below is not declared not instantiated
 		//thus the error
 
-		// initialize the sums array
+		// initialize the array to store the sums of the columns
 		int[] sums = new int[array[0].length];
-		// iterate through the columns
+
+		// iterate through the columns of the array
 		for (int i = 0; i < array[0].length; i++) {
-			// iterate through the rows
+			// initialize the sum of the current column
+			int sum = 0;
+			// iterate through the rows of the array
 			for (int j = 0; j < array.length; j++) {
-				// add the value of the current element to the sum of the column
-				sums[i] += array[j][i];
+				// add the element to the sum
+				sum += array[j][i];
 			}
+			// store the sum in the sums array
+			sums[i] = sum;
 		}
-		// return the sums array
+		// return the array of sums
 		return sums;
 	}
 	
@@ -84,24 +93,29 @@ public class PS2Driver {
 		//include the code to solve the respective problem here
 		//change anything you need to
 
-		// initialize the max number of vowels and the index of the string with the most vowels
-		int max = 0;
+		// initialize the index of the string with the most vowels
 		int maxIndex = 0;
+		// initialize the number of vowels in the string with the most vowels
+		int maxVowels = 0;
 
 		// iterate through the strings in the array
 		for (int i = 0; i < alpha.length; i++) {
-			int count = 0;
-			// iterate through the characters in the string
+			// initiale the number of vowels in the current string
+			int vowels = 0;
+			// iterate through the characters in the current string
 			for (int j = 0; j < alpha[i].length(); j++) {
-				// if the character is a vowel, increment the count
+				// check if the character is a vowel
 				if (alpha[i].charAt(j) == 'a' || alpha[i].charAt(j) == 'e' || alpha[i].charAt(j) == 'i' || alpha[i].charAt(j) == 'o' || alpha[i].charAt(j) == 'u') {
-					count++;
+					// increment the number of vowels
+					vowels++;
 				}
 			}
-			// if the current string has more vowels than the previous max, update the max and the index
-			if (count > max) {
-				max = count;
+			// check if the current string has more vowels than the string with the most vowels
+			if (vowels > maxVowels) {
+				// update the index of the string with the most vowels
 				maxIndex = i;
+				// update the number of vowels in the string with the most vowels
+				maxVowels = vowels;
 			}
 		}
 		// return the index of the string with the most vowels
@@ -113,6 +127,7 @@ public class PS2Driver {
 		
 		// iterate through the elements of the array
 		for (int i = 0; i < array.length; i++) {
+			// iterate through the elements of the current row
 			for (int j = 0; j < array[0].length; j++) {
 				// if the element is on the perimeter, set it to 'o', otherwise set it to 'x'
 				if (i == 0 || i == array.length - 1 || j == 0 || j == array[0].length - 1) {
@@ -131,5 +146,6 @@ public class PS2Driver {
 			// print a new line after each row
 			System.out.println();
 		}
+		// no return statement as the method is void
 	}
 }
