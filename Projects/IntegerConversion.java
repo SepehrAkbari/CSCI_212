@@ -24,6 +24,9 @@ public class IntegerConversion {
         // Scanner object to get the input from the user
         Scanner sc = new Scanner(System.in);
 
+        // Printing the title of the program
+        System.out.println("\n You talk; I complile! \n");
+
         // Size of the binary number
         final int SIZE = 8;
         // Array to store the binary number
