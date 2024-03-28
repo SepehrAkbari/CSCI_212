@@ -29,6 +29,8 @@ public class ZumbaAttendance {
         // Printing the title of the program
         System.out.println("\n one, two, three, ZUMBA! \n");
 
+        // Variable to store the yearly sum of the Zumba attendance
+        int sum = 0;
         // Size of the time period (in this case, 12 months)
         final int SIZE = 12;
         // Array to store the Zumba attendance for each month
@@ -60,11 +62,23 @@ public class ZumbaAttendance {
         // Outputting the Zumba attendance for each quarter
         System.out.println("\nZumba attendance for each quarter:");
         for (int i = 0; i < SIZE; i++) {
+            // Calculating the sum of the Zumba attendance
+            sum += yearlyValues[i];
+            // Outputting the Zumba attendance for each quarter
             System.out.print(yearlyValues[i] + " ");
             // Outputting a new line after each quarter
             if ((i + 1) % 4 == 0) {
                 System.out.println();
             }
+        }
+
+        // Outputting the total Zumba attendance for the year
+        System.out.println("\nTotal Zumba attendance for the year: " + sum + " sessions");
+        // Providing feedback based on the year's total
+        if (sum >= 100) {
+            System.out.println("Great job! Keep it up!");
+        } else {
+            System.out.println("You can do better! Keep pushing!");
         }
 
         // Closing the scanner
