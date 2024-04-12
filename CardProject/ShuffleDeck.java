@@ -1,4 +1,3 @@
-package CardApp;
 /*
  * Author @ Sepehr Akbari (Compiler)
  * File: ShuffleDeck Class
@@ -17,17 +16,18 @@ package CardApp;
  */
 
 // Packages & Imports
+package CardApp;
 import java.util.*;
 
 public class ShuffleDeck {
+    // Random object
+    static Random rand = new Random();
+
+    // Creating an array of 52 card objects called deck
+    private static Card[] deck = new Card[52];
+
     // main() method
     public static void main(String[] args) {
-        // Random object
-        Random rand = new Random();
-
-        // Creating an array of 52 card objects called deck
-        Card[] deck = new Card[52];
-        
         // Nested for loops to initialize all 52 cards to the four suits and 13 values, in order
         int index = 0;
         // Loop through the four suits
@@ -61,6 +61,13 @@ public class ShuffleDeck {
         
         System.out.println("\n The Shuffled Deck of Cards: \n");
         // Using a for:each loop to print the shuffled deck
+        for (Card card : deck) {
+            System.out.println(card);
+        }
+    }
+
+    // Method to print the deck
+    public static void printDeck(Card[] deck) {
         for (Card card : deck) {
             System.out.println(card);
         }
