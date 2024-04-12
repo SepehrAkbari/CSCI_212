@@ -1,4 +1,3 @@
-package CardApp;
 /*
  * Author @ Sepehr Akbari (Compiler)
  * File: Card Class
@@ -22,9 +21,9 @@ package CardApp;
  * Points: [30 points]
  */
 
+// Packages & Imports
+package CardApp;
 import java.util.*;
-import java.lang.*;
-import java.util.random.*;
 
 public class Card {
     // Random object
@@ -33,12 +32,16 @@ public class Card {
     // Private data items
     private int value;
     private String suit;
+
+    // Arrays to store the suits and values
+    private String[] suits = {"Diamonds", "Hearts", "Clubs", "Spades"};
+    private String[] values = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
     
     // Default constructor
     public Card() {
         // Random value and suit
         this.value = rand.nextInt(13) + 1;
-        this.suit = new String[] {"Diamonds", "Hearts", "Clubs", "Spades"}[rand.nextInt(4)];
+        this.suit = suits[rand.nextInt(4)];
     }
     
     // Constructor
@@ -69,13 +72,12 @@ public class Card {
     
     // toString() method
     public String toString() {
-        String[] values = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
         return values[this.value - 1] + " of " + this.suit;
     }
     
     // equals() method
     public boolean equals(Card card) {
         // Check if the two cards have the same suit and value
-        return this.value == card.getValue() && this.suit.equals(card.getSuit());
+        return (this.value == card.getValue()) && (this.suit.equals(card.getSuit()));
     }
 }
