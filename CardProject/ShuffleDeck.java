@@ -26,11 +26,10 @@ public class ShuffleDeck {
     // Creating an array of 52 card objects called deck
     private static Card[] deck = new Card[52];
 
-    // main() method
-    public static void main(String[] args) {
-        // Nested for loops to initialize all 52 cards to the four suits and 13 values, in order
+    // Method to initialize cards
+    public static void initializeDeck(Card[] deck) {
         int index = 0;
-        // Loop through the four suits
+        // Use nested for loops to initialize all 52 cards to the four suits and 13 values, in order
         for (int i = 0; i < 4; i++) { 
             // Loop through the 13 values  
             for (int value = 1; value <= 13; value++) {
@@ -42,27 +41,17 @@ public class ShuffleDeck {
                 index++;
             }
         }
-        
-        System.out.println("The Deck of Cards: \n");
-        // Using a for:each loop to print the entire deck
-        for (Card card : deck) {
-            System.out.println(card);
-        }
-        
-        // Using a loop with a random number generator to shuffle the deck
+    }
+
+    // Method to shuffle the deck
+    public static void shuffleDeck(Card[] deck) {
         for (int i = 0; i < deck.length; i++) {
             // Generate a random index
             int randomIndex = rand.nextInt(deck.length);
-            // Swap the cards
+            // Swap the cards randomly
             Card temp = deck[i];
             deck[i] = deck[randomIndex];
             deck[randomIndex] = temp;
-        }
-        
-        System.out.println("\n The Shuffled Deck of Cards: \n");
-        // Using a for:each loop to print the shuffled deck
-        for (Card card : deck) {
-            System.out.println(card);
         }
     }
 
@@ -71,5 +60,19 @@ public class ShuffleDeck {
         for (Card card : deck) {
             System.out.println(card);
         }
+    }
+
+    // main() method for testing (not required)
+    public static void main(String[] args) {
+        // Initialize the deck
+        initializeDeck(deck);
+        // Print the deck
+        System.out.println("Initial Deck:");
+        printDeck(deck);
+        // Shuffle the deck
+        shuffleDeck(deck);
+        // Print the shuffled deck
+        System.out.println("\nShuffled Deck:");
+        printDeck(deck);
     }
 }
