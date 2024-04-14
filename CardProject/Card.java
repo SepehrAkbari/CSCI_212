@@ -81,24 +81,25 @@ public class Card {
         return (String.valueOf(this.value).equals(card.getValue())) && (this.suit.equals(card.getSuit()));
     }
 
+    // main() method for testing (not required)
     public static void main(String[] args) {
         /*
-         * Testing the default and constructor method
+         * Testing the default constructor
          */
 
-        // Card objects (default constructor)
+        // Card objects (default constructor())
         Card card1 = new Card();
         Card card2 = new Card();
 
         /*
-         * Testing the constructor method
+         * Testing the constructor
          */
 
-        // Card objects (constructor)
+        // Card objects (constructor(value, suit))
         Card card3 = new Card(1, "Hearts");
         Card card4 = new Card(13, "Spades");
 
-        // Equal Card objects (constructor)
+        // Equal Card objects (constructor(value, suit))
         Card card5 = new Card(10, "Clubs");
         Card card6 = new Card(10, "Clubs");
 
@@ -123,13 +124,13 @@ public class Card {
          */
 
         // Check if the cards are equal
-        System.out.println("Card 1 & Card 2 equal: " + card1.equals(card2));
+        System.out.println("Card 1 & Card 2 are equal: " + card1.equals(card2));
 
         // Check if the cards are equal (they are not)
-        System.out.println("Card 3 & Card 4 equal: " + card3.equals(card4));
+        System.out.println("Card 3 & Card 4 are equal: " + card3.equals(card4));
 
         // Check if the cards are equal (they are)
-        System.out.println("Card 5 & Card 6 equal: " + card5.equals(card6));
+        System.out.println("Card 5 & Card 6 are equal: " + card5.equals(card6));
 
         /*
          * Testing getters and setters
@@ -142,11 +143,11 @@ public class Card {
         card4.setSuit("Diamonds");
 
         // Get the value of card3
-        System.out.println("New Card 3 Value: " + card3.getValue());
+        System.out.println("New Card 3, Value: " + card3.getValue());
         System.out.println("New Card 3: " + card3.toString());
 
         // Get the suit of card4
-        System.out.println("New Card 4 suit: " + card4.getSuit());
+        System.out.println("New Card 4, suit: " + card4.getSuit());
         System.out.println("New Card 4: " + card4.toString());
     }
 }
