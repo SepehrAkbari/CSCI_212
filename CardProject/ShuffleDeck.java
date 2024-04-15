@@ -64,15 +64,19 @@ public class ShuffleDeck {
 
     // main() method for testing (not required)
     public static void main(String[] args) {
+        System.out.println("\n Card Game: How I lost my life savings! \n");
+
         // Initialize the deck
         initializeDeck(deck);
         // Print the deck
-        System.out.println("Initial Deck:");
+        System.out.println(" Initial Deck:\n");
         printDeck(deck);
         // Shuffle the deck
         shuffleDeck(deck);
         // Print the shuffled deck
-        System.out.println("\nShuffled Deck:");
+        System.out.println("\n\n Shuffled Deck:\n");
         printDeck(deck);
+
+        System.out.println();
     }
 }
