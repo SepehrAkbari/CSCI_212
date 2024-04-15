@@ -83,6 +83,8 @@ public class Card {
 
     // main() method for testing (not required)
     public static void main(String[] args) {
+        System.out.println("\n Card Game: How I lost my life savings! \n");
+        System.out.println("Testing: \n");
         /*
          * Testing the default constructor
          */
@@ -149,5 +151,7 @@ public class Card {
         // Get the suit of card4
         System.out.println("New Card 4, suit: " + card4.getSuit());
         System.out.println("New Card 4: " + card4.toString());
+
+        System.out.println();
     }
 }
