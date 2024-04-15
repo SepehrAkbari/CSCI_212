@@ -1,9 +1,8 @@
-package DiceApp;
 /*
  * Author @ Sepehr Akbari (Compiler)
  * File: ThreeDice Class
  * April 16, 2024
- * Title: "Card Game: How I lost my life savings!"
+ * Title: "Rock & Rollin'Dice"
  * Desc:
     * Using the Die class, create an application called ThreeDice that creates three Die objects, 
     and keeps rolling them together until the sum of the three Die faces is 12. Print the outcome of each roll, 
@@ -12,26 +11,44 @@ package DiceApp;
  * Points: [15 points]
  */
 
+// Packages & Imports
+package DiceApp;
+
 public class ThreeDice {
+    // Dice objects
     Die die1 = new Die();
     Die die2 = new Die();
     Die die3 = new Die();
 
-    public static void main(String[] args) {
-        ThreeDice roll = new ThreeDice();
-        int sum = 0;
+    // roll() Method
+    public void roll() {
+        // Iteration Count Variable
         int rolls = 0;
+        // Sum of the dice values
+        int sum = 0;
+
+        // Roll Dice until the sum of the dice values is 12
         while (sum != 12) {
-            roll.die1.roll();
-            roll.die2.roll();
-            roll.die3.roll();
-            sum = roll.die1.getValue() + roll.die2.getValue() + roll.die3.getValue();
-            System.out.println("Die 1: " + roll.die1.getValue());
-            System.out.println("Die 2: " + roll.die2.getValue());
-            System.out.println("Die 3: " + roll.die3.getValue());
+            // Roll Dice (using the roll method from Die class)
+            die1.roll();
+            die2.roll();
+            die3.roll();
+
+            // Calculate the sum of the dice values
+            sum = die1.getValue() + die2.getValue() + die3.getValue();
+
+            // Print Dice values after every roll
+            System.out.println("Die 1: " + die1.getValue());
+            System.out.println("Die 2: " + die2.getValue());
+            System.out.println("Die 3: " + die3.getValue());
+            // Print the sum of the dice values
             System.out.println("Sum: " + sum);
+
+            // Increment the total number of rolls
             rolls++;
         }
+
+        // Print the total number of rolls
         System.out.println("Number of rolls: " + rolls);
     }
 }
