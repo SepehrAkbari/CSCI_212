@@ -42,13 +42,27 @@ public class ThreeDice {
             System.out.println("Die 2: " + die2.getValue());
             System.out.println("Die 3: " + die3.getValue());
             // Print the sum of the dice values
-            System.out.println("Sum: " + sum);
+            System.out.println("\nSum: " + sum + "\n\n");
 
             // Increment the total number of rolls
             rolls++;
         }
 
-        // Print the total number of rolls
-        System.out.println("Number of rolls: " + rolls);
+        // Print the total number of rolls 
+        System.out.println("Number of attempts: " + rolls);
+        System.out.println("Number of total rolls: " + rolls * 3 + "\n"); 
+    }
+
+    // main() method for testing (not required)
+    public static void main(String[] args) {
+        System.out.println("\n Rock & Rollin'Dice\n");
+        System.out.println("Testing: \n");
+
+        // Create an object of ThreeDice
+        ThreeDice threeDice = new ThreeDice();
+        // Roll the dice
+        threeDice.roll();
+
+        System.out.println();
     }
 }
