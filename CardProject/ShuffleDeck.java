@@ -17,6 +17,7 @@
 
 // Packages & Imports
 package CardApp;
+//import CardApp.Card; // Uncomment this line if you are running this file separately (locally)
 import java.util.*;
 
 public class ShuffleDeck {
@@ -24,7 +25,7 @@ public class ShuffleDeck {
     static Random rand = new Random();
 
     // Creating an array of 52 card objects called deck
-    private static Card[] deck = new Card[52];
+    static Card[] deck = new Card[52];
 
     // Method to initialize cards
     public static void initializeDeck(Card[] deck) {
